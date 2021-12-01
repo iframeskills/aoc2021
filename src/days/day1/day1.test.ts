@@ -1,22 +1,30 @@
-import day1 from "./day1";
+import day1, {hasIncreased, countTrues} from "./day1";
 import sampleinput from "./input/sample";
-import sampleoutput from "./output/sample";
-
-import exerciseinput from "./input/exercise";
-import part1output from "./output/part1";
-import part2output from "./output/part2";
+import sampleresult from "./result/sample";
 
 describe("solution", () => {
 
+  it("returns false for no previous measurement", () => {
+    const result = hasIncreased(199, undefined)
+    expect(result).toEqual(false);
+  });
+
+  it("returns true for increase", () => {
+    const result = hasIncreased(199, 200)
+    expect(result).toEqual(true);
+  });
+
+  it("returns false for decrease", () => {
+    const result = hasIncreased(210, 200)
+    expect(result).toEqual(false);
+  });
+
+  it("counts numbers of true", () => {
+    const result = countTrues([false, true, true, true, false, true, true, true, false, true]);
+    expect(result).toEqual(7); 
+  });
+
   it("PART 1 - sample input should match output", () => {
-    expect(day1(sampleinput).resultpart1).toEqual(sampleoutput);
-  });
-
-  it("PART 1 - exercise input should match output", () => {
-    expect(day1(exerciseinput).resultpart1).toEqual(part1output);
-  });
-
-  it("PART 2 - exercise input should match output", () => {
-    expect(day1(exerciseinput).resultpart2).toEqual(part2output);
+    expect(day1(sampleinput).resultpart1).toEqual(sampleresult);
   });
 });
