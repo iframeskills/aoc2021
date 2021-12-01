@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "test:watch": "jest --coverage --watchAll",
+    "test:watch": "jest --coverage --watchAll --maxWorkers=1",
     "build": "tsc",
-    "build:watch": "onchange 'src/**/*.ts' -- npm run build",
+    "build:watch": "tsc -w",
     "view:coverage": "serve coverage/lcov-report",
     "clean": "rm -rf coverage src/**/*.js src/**/*.map",
     "start": "node build/index.js"
@@ -33,7 +33,6 @@
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-import": "^2.22.1",
     "jest": "^26.6.3",
-    "onchange": "^7.1.0",
     "prettier": "2.2.1",
     "serve": "^11.3.2",
     "ts-jest": "^26.4.4",

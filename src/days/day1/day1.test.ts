@@ -1,6 +1,5 @@
 import day1, {hasIncreased, countTrues} from "./day1";
 import sampleinput from "./input/sample";
-import sampleresult from "./result/sample";
 
 describe("solution", () => {
 
@@ -25,6 +24,7 @@ describe("solution", () => {
   });
 
   it("PART 1 - sample input should match output", () => {
-    expect(day1(sampleinput).resultpart1).toEqual(sampleresult);
+    expect(day1(sampleinput).resultpart1).toEqual(7);
+    expect(day1(sampleinput).resultpart2).toEqual(5);
   });
 });
