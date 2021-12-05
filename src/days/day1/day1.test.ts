@@ -23,7 +23,7 @@ describe("solution", () => {
     expect(result).toEqual(7); 
   });
 
-  it("PART 1 - sample input should match output", () => {
+  it("sample input should match output", () => {
     expect(day1(sampleinput).resultpart1).toEqual(7);
     expect(day1(sampleinput).resultpart2).toEqual(5);
   });

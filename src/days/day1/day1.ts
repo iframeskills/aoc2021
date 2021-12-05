@@ -34,7 +34,6 @@ export const hasIncreasedCountSteps = (numbers:number[]) =>{
       const previousSum:number = numbers[index-1] + numbers[index] + numbers[index+1];
       // compare 
       const result = currentSum > previousSum;
-
       hasIncreasedResult.push(result);
     }
   });
